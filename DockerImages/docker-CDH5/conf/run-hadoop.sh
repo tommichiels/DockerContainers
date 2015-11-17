@@ -1,11 +1,11 @@
 #!/bin/bash
 
 if [ -z ${NAMENODE+x} ]; then
-    NAMENODE=localhost
+    NAMENODE=0.0.0.0
 fi
 
 if [ -z ${RESOURCEMANAGER+x} ]; then
-    RESOURCEMANAGER=localhost
+    RESOURCEMANAGER=0.0.0.0
 fi	
 
 sed s/HOSTNAME/$NAMENODE/ /etc/hadoop/conf/core-site.xml.template > /etc/hadoop/conf/core-site.xml;
